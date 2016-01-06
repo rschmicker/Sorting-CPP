@@ -9,11 +9,12 @@
 #define SORT_FUNCTIONS_HPP
 
 #include <iostream>
-#include "main.hpp"
+#include <algorithm>
+#include "controller.hpp"
 
-void insertion_sort();
-void selection_sort();
-void bubblesort();
-void swap(int *xp, int *yp);//helper function for bubblesort()
+
+std::vector<int> insertion_sort(std::vector<int> to_sort);
+std::vector<int> selection_sort(std::vector<int> to_sort);
+std::vector<int> bubblesort(std::vector<int> to_sort);
 
 #endif

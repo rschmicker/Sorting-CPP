@@ -7,9 +7,7 @@
 
 #include "sort_functions.hpp"
 
-extern vector<int> to_sort;
-
-void insertion_sort(){
+vector<int> insertion_sort(vector<int> to_sort){
     int temp = 0, j = 0;
     for(int i = 0; i < SIZE; i++){
         j = i;
@@ -19,11 +17,11 @@ void insertion_sort(){
             to_sort[j-1] = temp;
             j--;
         }
-        print_array();
     }
+    return to_sort;
 }
 
-void selection_sort(){
+vector<int> selection_sort(vector<int> to_sort){
     int min, temp;
     for(int i = 0; i < SIZE-1; i++){
         min = i;
@@ -37,23 +35,17 @@ void selection_sort(){
             to_sort[i] = to_sort[min];
             to_sort[min] = temp;
         }
-        print_array();
     }
+    return to_sort;
 }
 
-void bubblesort(){
+vector<int> bubblesort(vector<int> to_sort){
     for(int i = 0; i < SIZE - 1; i++){
         for(int j = 0; j < SIZE-i-1; j++){
             if( to_sort[j] > to_sort[j+1]){
-                swap(&to_sort[j], &to_sort[j+1]);
+                swap(to_sort[j], to_sort[j+1]);
             }
         }
-        print_array();
     }
-}
-
-void swap(int *xp, int *yp){
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+    return to_sort;
 }
